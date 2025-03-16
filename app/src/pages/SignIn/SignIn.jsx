@@ -13,11 +13,10 @@ const SignIn = () => {
     navigate("/"); // Replace with actual sign-in logic
   };
   return (
-    // <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-12 lg:px-24">
     <SectionContainer>
       <div className="flex flex-col md:flex-row items-center justify-center my-10 md:mt-0">
         {/* Left Side - Sign In Form */}
-        {/* <div className="w-full md:w-1/2 max-w-md"> */}
+        
         <div className="w-full md:w-1/2">
           <h2 className="text-3xl font-medium lg:text-[40px] mb-6">Sign in to Alpha</h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -63,13 +62,7 @@ const SignIn = () => {
         </div>
 
         {/* Right Side - Image & UI Components */}
-        {/* <div className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 lg:translate-x-10">
-          <img
-            src="/images/hero.png"
-            alt="UI Mockup"
-            className="max-w-full h-auto scale-110"
-          />
-        </div> */}
+        
         <div className="md:w-1/2 w-full mt-8 md:mt-0 flex justify-center lg:translate-x-10 z-[-1]">
           <img
             src="/images/hero.png"

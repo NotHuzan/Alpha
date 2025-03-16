@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <SectionContainer>
       <footer className="rounded-none bg-white">
-        {/* <div className="mx-auto max-w-screen-xl p-4 py-6 md:p-8 lg:p-10"> */}
         <div className="">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
             <div className="col-span-2">

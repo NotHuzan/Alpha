@@ -15,7 +15,7 @@ const TeamInviteForm = () => {
 
   return (
     <SectionContainer>
-      {/* // <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen px-6 md:px-12 bg-white"> */}
+      
       <div className="flex flex-col md:flex-row items-center justify-between my-10 md:mt-0">
         {/* Left Side - Form Section */}
         <form className="w-full md:w-1/2" onSubmit={handleSubmit}>
@@ -57,13 +57,7 @@ const TeamInviteForm = () => {
         </form>
 
         {/* Right Side - Image Section */}
-        {/* <div className="hidden lg:block w-1/2">
-        <img
-          src="/images/hero.png" 
-          alt="Team Invite Preview"
-          className="w-full"
-        />
-      </div> */}
+        
         <div className="md:w-1/2 w-full mt-8 md:mt-0 flex justify-center lg:translate-x-10 z-[-1]">
           <img
             src="/images/hero.png"

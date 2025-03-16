@@ -14,7 +14,7 @@ const CompanyTeamName = () => {
   };
   return (
     <SectionContainer>
-      {/* // <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-12 bg-white"> */}
+      
       <div className="flex flex-col md:flex-row items-center justify-center my-10 md:mt-0">
         {/* Left Section */}
         <div className="md:w-1/2 w-full text-left">

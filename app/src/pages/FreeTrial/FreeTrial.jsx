@@ -15,7 +15,6 @@ const FreeTrial = () => {
   };
 
   return (
-    // <div className="flex items-center justify-center min-h-screen bg-white px-4">
     <SectionContainer>
       <div className="flex items-center justify-center my-10 bg-white md:mt-0">
         <div className="w-full max-w-md text-center">

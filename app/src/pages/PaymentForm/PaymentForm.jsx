@@ -32,7 +32,6 @@ const PaymentForm = () => {
 
   return (
     <SectionContainer>
-      {/* <div className="flex flex-col md:flex-row items-start justify-center min-h-screen"> */}
       <div className="flex flex-col md:flex-row items-start justify-between md:h-[700px]">
         {/* Left Side - Enterprise Plan */}
         <div className="bg-white shadow-lg rounded-lg w-full md:w-[45%] border border-gray-300 md:h-full">
@@ -40,7 +39,6 @@ const PaymentForm = () => {
             <img
               src="/images/payment.png"
               alt="Illustration"
-              // className="h-28 scale-145 translate-y-3 translate-x-[80%]"
               className="h-28 scale-145 top-10 absolute right-20"
             />
           </div>
@@ -161,7 +159,7 @@ const PaymentForm = () => {
                   placeholder="1234 5678 9012 3456"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
                 />
-                {/* Replace with your card logos image */}
+                
                 <img
                   src="/images/cards.png"
                   alt="Card Logos"
@@ -194,7 +192,7 @@ const PaymentForm = () => {
                     placeholder="CVC"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
                   />
-                  {/* Replace with your security icon image */}
+                  
                   <img
                     src="/images/cvc.png"
                     alt="Security Icon"

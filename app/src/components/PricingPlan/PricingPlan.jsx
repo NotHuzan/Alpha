@@ -94,7 +94,6 @@ const PricingPlan = () => {
             </div>
             <p className="text-left mb-4 text-gray-500">Upto 20 people</p>
             <hr className="text-gray-300" />
-            {/* <p className="text-gray-500 mb-6">{plan.description}</p> */}
             <div className="flex flex-col justify-between h-full">
               <ul className="text-left space-y-3 my-6 mb-8">
                 {plan.features.map((feature, idx) => (

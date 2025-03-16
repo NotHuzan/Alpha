@@ -15,9 +15,7 @@ const Hero = () => {
   };
   return (
     <SectionContainer className="!mr-0 xl:!pl-3">
-      {/* <div className=" p-6 py-6 md:p-8 md:pr-0 lg:p-10 lg:pr-0 mr-0"> */}
-      {/* <div className="mx-auto grid max-w-screen-xl px-4 py-8 gap-20 lg:grid-cols-2 lg:gap-12 lg:py-16 "> */}
-      {/* <div className="grid py-8 gap-20 lg:grid-cols-2 lg:gap-12 lg:py-16 relative"> */}
+
       <div className="grid gap-20 lg:grid-cols-2 lg:gap-12 relative">
         <div className="lg:mr-auto place-self-center md:w-auto w-full">
           <h1 className="text-center lg:text-left mb-4 max-w-2xl text-4xl leading-none tracking-tight text-black md:text-6xl font-normal">

@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-// NOTE:-  useLocation() is causing the unnecessary rerenders of this components
-
 const ScrollToTop = () => {
     const { pathname } = useLocation();
 
