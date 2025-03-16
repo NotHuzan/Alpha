@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionContainer from "../../components/SectionContainer/SectionContainer";
 import { useNavigate } from "react-router-dom";
 
 const TeamInviteForm = () => {
   const navigate = useNavigate();
+  const [emails, setEmails] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (emails.trim())
+      // Prevent navigation if textarea is empty
+      navigate("/payment");
+  };
+
   return (
     <SectionContainer>
       {/* // <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen px-6 md:px-12 bg-white"> */}
-      <div className="flex flex-col md:flex-row items-center justify-between my-10">
+      <div className="flex flex-col md:flex-row items-center justify-between my-10 md:mt-0">
         {/* Left Side - Form Section */}
-        <form className="w-full md:w-1/2">
+        <form className="w-full md:w-1/2" onSubmit={handleSubmit}>
           <h1 className="text-3xl font-medium lg:text-[40px]">
             Who else is on this team?
           </h1>
@@ -18,8 +27,10 @@ const TeamInviteForm = () => {
           </p>
 
           <textarea
-            // required
+            value={emails}
+            onChange={(e) => setEmails(e.target.value)}
             placeholder="alex@gmail.com, john@gmail.com"
+            required
             className="w-full mt-2 p-3 border border-[#B4B0B0] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 h-36"
           ></textarea>
 
@@ -31,7 +42,6 @@ const TeamInviteForm = () => {
           <div className="mt-8 flex items-center space-x-4">
             <button
               type="submit"
-              onClick={() => navigate("/payment")}
               className="bg-[#26875C] py-3 px-9 text-white rounded-sm hover:bg-green-800 transition cursor-pointer"
             >
               Next

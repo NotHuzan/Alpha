@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionContainer from "../../components/SectionContainer/SectionContainer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email.trim() || !password.trim()) return; // Prevent submission if fields are empty
+    navigate("/"); // Replace with actual sign-in logic
+  };
   return (
     // <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-12 lg:px-24">
     <SectionContainer>
-      <div className="flex flex-col md:flex-row items-center justify-center my-10">
+      <div className="flex flex-col md:flex-row items-center justify-center my-10 md:mt-0">
         {/* Left Side - Sign In Form */}
         {/* <div className="w-full md:w-1/2 max-w-md"> */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-bold mb-6">Sign in to Alpha</h2>
-          <form className="space-y-4">
+          <h2 className="text-3xl font-medium lg:text-[40px] mb-6">Sign in to Alpha</h2>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-900 font-medium mb-2">
                 Email
               </label>
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                required
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
@@ -28,7 +40,10 @@ const SignIn = () => {
               </label>
               <input
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="correct horse battery staple"
+                required
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>

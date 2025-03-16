@@ -38,7 +38,7 @@ const Navbar = () => {
         </Link>
         <Link
           to="/freetrial"
-          className="border border-[#0000001A] font-medium px-4 py-2 hover:bg-gray-100 cursor-pointer"
+          className="border border-[#0000001A] font-medium px-4 py-2 hover:bg-[#26875C] transition hover:text-white cursor-pointer"
         >
           Start free
         </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
           <Link
             to="/freetrial"
             onClick={() => setIsOpen(false)}
-            className="border border-[#0000001A] px-4 py-2 hover:bg-gray-100 mt-2 inline-block"
+            className="px-4 py-3 hover:bg-green-800 transition mt-2 inline-block bg-[#26875C] text-white"
           >
             Start free
           </Link>

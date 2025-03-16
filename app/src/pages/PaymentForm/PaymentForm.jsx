@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionContainer from "../../components/SectionContainer/SectionContainer";
 
 const PaymentForm = () => {
+  const [cardNumber, setCardNumber] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
+  const [securityCode, setSecurityCode] = useState("");
+
+  // Format Card Number (Auto-space after every 4th digit)
+  const handleCardNumberChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    value = value.slice(0, 16); // Limit to 16 digits
+    value = value.replace(/(.{4})/g, "$1 ").trim(); // Add space every 4 digits
+    setCardNumber(value);
+  };
+
+  // Format Expiration Date (MM/YY)
+  const handleExpirationChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    value = value.slice(0, 4); // Limit to 4 digits
+    if (value.length > 2) {
+      value = `${value.slice(0, 2)}/${value.slice(2)}`; // Auto-insert slash after 2 digits
+    }
+    setExpirationDate(value);
+  };
+
+  // Restrict Security Code to 3 digits
+  const handleSecurityCodeChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    setSecurityCode(value.slice(0, 3)); // Limit to 3 digits
+  };
+
   return (
     <SectionContainer>
       {/* <div className="flex flex-col md:flex-row items-start justify-center min-h-screen"> */}
@@ -109,7 +137,7 @@ const PaymentForm = () => {
                     <label className="block text-gray-700 mb-1">{label}</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 )
@@ -123,18 +151,25 @@ const PaymentForm = () => {
           <div>
             <h2 className="text-xl font-semibold">2. Payment method</h2>
             <div className="space-y-4 mt-3">
-              <div>
+              {/* Card Number */}
+              <div className="relative">
                 <label className="block text-gray-700 mb-1">Card number</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={cardNumber}
+                  onChange={handleCardNumberChange}
+                  placeholder="1234 5678 9012 3456"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
+                />
+                {/* Replace with your card logos image */}
+                <img
+                  src="/images/cards.png"
+                  alt="Card Logos"
+                  className="absolute right-3 top-10 w-26 h-5"
                 />
               </div>
-              {/* <input
-                type="text"
-                placeholder="Card number"
-                className="w-full p-2 border rounded"
-              /> */}
+
+              {/* Expiration Date & Security Code */}
               <div className="flex space-x-2">
                 <div className="w-1/2">
                   <label className="block text-gray-700 mb-1">
@@ -142,30 +177,30 @@ const PaymentForm = () => {
                   </label>
                   <input
                     type="text"
+                    value={expirationDate}
+                    onChange={handleExpirationChange}
                     placeholder="MM/YY"
-                    className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
-                <div className="w-1/2">
+                <div className="w-1/2 relative">
                   <label className="block text-gray-700 mb-1">
                     Security code
                   </label>
                   <input
                     type="text"
+                    value={securityCode}
+                    onChange={handleSecurityCodeChange}
                     placeholder="CVC"
-                    className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+                  />
+                  {/* Replace with your security icon image */}
+                  <img
+                    src="/images/cvc.png"
+                    alt="Security Icon"
+                    className="absolute right-3 top-10 w-7 h-5"
                   />
                 </div>
-                {/* <input
-                  type="text"
-                  placeholder="MM/YY"
-                  className="w-1/2 p-2 border rounded"
-                />
-                <input
-                  type="text"
-                  placeholder="CVC"
-                  className="w-1/2 p-2 border rounded"
-                /> */}
               </div>
             </div>
           </div>
